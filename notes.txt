@@ -1,0 +1,259 @@
+-- html for calculator --
+<div class="heading">
+      <h1 id="title">DOM Calculator</h1>
+      <p id="description">Created Calculator Using DOM Method In JavaScript</p>
+    </div>
+    <div class="container">
+      <div class="calculator">
+        <input type="display" placeholder="0" id="result" readonly />
+        <div class="buttonBox">
+          <button onclick="clearDisplay()" class="btn main-btn" id="clear">C</button>
+          <button onclick="clearNumber()" class="btn main-btn" id="delete">&larr;</button>
+          <button onclick="getNumber(.)" class="btn main-btn" id="dot">.</button>
+          <button onclick="getOperator()" class="btn main-btn" id="multiple">&times;</button>
+          <button onclick="getNumber(7)" class="btn" id="7">7</button>
+          <button onclick="getNumber(8)" class="btn" id="8">8</button>
+          <button onclick="getNumber(9)" class="btn" id="9">9</button>
+          <button onclick="getOperator()" class="btn main-btn" id="division">/</button>
+          <button onclick="getNumber(4)" class="btn" id="4">4</button>
+          <button onclick="getNumber(5)" class="btn" id="5">5</button>
+          <button onclick="getNumber(6)" class="btn" id="6">6</button>
+          <button onclick="getOperator()" class="btn main-btn" id="subtract">&minus;</button>
+          <button onclick="getNumber(1)" class="btn" id="1">1</button>
+          <button onclick="getNumber(2)" class="btn" id="2">2</button>
+          <button onclick="getNumber(3)" class="btn" id="3">3</button>
+          <button onclick="getOperator()" class="btn main-btn" id="add">+</button>
+          <button onclick="getNumber(0)" class="btn" id="0">0</button>
+          <button onclick="getNumber("00")" class="btn" id="00">00</button>
+          <button onclick="calculateEquals()" class="btn" id="equal">=</button>
+       </div>
+    </div>
+</div>
+
+
+-- JavaScript for calculator --
+
+
+// //!DOM
+// //createElement
+// const heading = document.createElement("div");
+// const h1 = document.createElement("h1");
+// const p = document.createElement("p");
+// const container = document.createElement("div");
+// const calculator = document.createElement("div");
+// const result = document.createElement("input");
+// const buttonBox = document.createElement("div");
+// const buttonClear = document.createElement("button");
+// const buttonDelete = document.createElement("button");
+// const buttonDot = document.createElement("button");
+// const buttonMultiple = document.createElement("button");
+// const button7 = document.createElement("button");
+// const button8 = document.createElement("button");
+// const button9 = document.createElement("button");
+// const buttonDivision = document.createElement("button");
+// const button4 = document.createElement("button");
+// const button5 = document.createElement("button");
+// const button6 = document.createElement("button");
+// const buttonSubtract = document.createElement("button");
+// const button1 = document.createElement("button");
+// const button2 = document.createElement("button");
+// const button3 = document.createElement("button");
+// const buttonAdd = document.createElement("button");
+// const button0 = document.createElement("button");
+// const button00 = document.createElement("button");
+// const buttonEqual = document.createElement("button");
+// //innerHTMl
+// h1.innerHTML = "DOM Calculator";
+// p.innerHTML = "Created Calculator Using DOM Method In JavaScript";
+// buttonClear.innerHTML = "C";
+// buttonDelete.innerHTML = "&larr;";
+// buttonDot.innerHTML = ".";
+// buttonMultiple.innerHTML = "&times;";
+// button7.innerHTML = "7";
+// button8.innerHTML = "8";
+// button9.innerHTML = "9";
+// buttonDivision.innerHTML = "/";
+// button4.innerHTML = "4";
+// button5.innerHTML = "5";
+// button6.innerHTML = "6";
+// buttonSubtract.innerHTML = "-";
+// button1.innerHTML = "1";
+// button2.innerHTML = "2";
+// button3.innerHTML = "3";
+// buttonAdd.innerHTML = "+";
+// button0.innerHTML = "0";
+// button00.innerHTML = "00";
+// buttonEqual.innerHTML = "=";
+// //class
+// heading.classList.add("heading");
+// container.classList.add("container");
+// calculator.classList.add("calculator");
+// buttonBox.classList.add("buttonBox");
+// buttonClear.classList.add("btn", "main-btn");
+// buttonDelete.classList.add("btn", "main-btn");
+// buttonDot.classList.add("btn", "main-btn");
+// buttonMultiple.classList.add("btn", "main-btn");
+// button7.classList.add("btn");
+// button8.classList.add("btn");
+// button9.classList.add("btn");
+// buttonDivision.classList.add("btn", "main-btn");
+// button4.classList.add("btn");
+// button5.classList.add("btn");
+// button6.classList.add("btn");
+// buttonSubtract.classList.add("btn", "main-btn");
+// button1.classList.add("btn");
+// button2.classList.add("btn");
+// button3.classList.add("btn");
+// buttonAdd.classList.add("btn", "main-btn");
+// button0.classList.add("btn");
+// button00.classList.add("btn");
+// buttonEqual.classList.add("btn");
+// //id
+// h1.id = "title";
+// p.id = "description";
+// result.id = "result";
+// buttonClear.id = "clear";
+// buttonDelete.id = "delete";
+// buttonDot.id = ".";
+
+// button1.id = "1";
+// button2.id = "2";
+// button3.id = "3";
+// button4.id = "4";
+// button5.id = "5";
+// button6.id = "6";
+// button7.id = "7";
+// button8.id = "8";
+// button9.id = "9";
+
+// buttonMultiple.id = "multiple";
+// buttonDivision.id = "division";
+// buttonSubtract.id = "subtract";
+// buttonAdd.id = "add";
+
+// button0.id = "0";
+// button00.id = "00";
+// buttonEqual.id = "equal";
+// //attribute
+// result.setAttribute("type", "text");
+// result.setAttribute("readonly", true);
+// buttonClear.setAttribute("onclick", "clearDisplay()");
+// buttonDelete.setAttribute("onclick", "clearNumber()");
+// buttonDot.setAttribute("onclick", "getOperator('%')");
+// buttonMultiple.setAttribute("onclick", "getOperator('*')");
+// button7.setAttribute("onclick", "getNumber(7)");
+// button8.setAttribute("onclick", "getNumber(8)");
+// button9.setAttribute("onclick", "getNumber(9)");
+// buttonDivision.setAttribute("onclick", "getOperator('/')");
+// button4.setAttribute("onclick", "getNumber(4)");
+// button5.setAttribute("onclick", "getNumber(5)");
+// button6.setAttribute("onclick", "getNumber(6)");
+// buttonSubtract.setAttribute("onclick", "getOperator('-')");
+// button1.setAttribute("onclick", "getNumber(1)");
+// button2.setAttribute("onclick", "getNumber(2)");
+// button3.setAttribute("onclick", "getNumber(3)");
+// buttonAdd.setAttribute("onclick", "getOperator('+')");
+// button0.setAttribute("onclick", "getNumber(0)");
+// button00.setAttribute("onclick", "getNumber('00')");
+// buttonEqual.setAttribute("onclick", "calculateEquals()");
+
+// //append
+// heading.append(h1, p);
+// buttonBox.append(
+//   buttonClear,
+//   buttonDelete,
+//   buttonDot,
+//   buttonMultiple,
+//   button7,
+//   button8,
+//   button9,
+//   buttonDivision,
+//   button4,
+//   button5,
+//   button6,
+//   buttonSubtract,
+//   button1,
+//   button2,
+//   button3,
+//   buttonAdd,
+//   button0,
+//   button00,
+//   buttonEqual
+// );
+// calculator.append(result, buttonBox);
+// container.append(calculator);
+// document.body.append(heading, container);
+
+//!function
+// result.value = 0;
+// let firstNumber;
+// let secondNumber;
+// let step = 0;
+// let opration;
+// let mainResult = 0;
+// let firstNumArray = [];
+// let secondNumArray = [];
+
+// function getNumber(num) {
+//   if (step === 0 || step === 1) {
+//     firstNumArray.push(num);
+//     step = 1;
+//     firstNumber = Number(firstNumArray.join(""));
+//     result.value = firstNumber;
+//   } else if (step === 2) {
+//     secondNumArray.push(num);
+//     secondNumber = Number(secondNumArray.join(""));
+//     result.value = secondNumber;
+//   }
+// }
+// function getOperator(op) {
+//   step = 2;
+//   opration = op;
+//   // firstNumArray.push(op);
+//   // firstNumber = firstNumArray.join("");
+//   // result.value = firstNumber;
+// }
+
+// function clearNumber() {
+//   if (step === 0 || step === 1) {
+//     firstNumArray.pop();
+//     step = 1;
+//     firstNumber = Number(firstNumArray.join(""));
+//     result.value = firstNumber;
+//   } else if (step === 2) {
+//     secondNumArray.pop();
+//     secondNumber = Number(secondNumArray.join(""));
+//     result.value = secondNumber;
+//   }
+// }
+
+// function clearDisplay() {
+//   result.value = 0;
+//   firstNumber;
+//   secondNumber;
+//   step = 0;
+//   opration;
+
+//   mainResult = 0;
+//   firstNumArray = [];
+//   secondNumArray = [];
+// }
+
+// function calculateEquals() {
+//   if (opration === "+") {
+//     mainResult = firstNumber + secondNumber;
+//     result.value = mainResult;
+//   } else if (opration === "-") {
+//     mainResult = firstNumber - secondNumber;
+//     result.value = mainResult;
+//   } else if (opration === "*") {
+//     mainResult = firstNumber * secondNumber;
+//     result.value = mainResult;
+//   } else if (opration === "/") {
+//     mainResult = firstNumber / secondNumber;
+//     result.value = mainResult;
+//   } else if (opration === "%") {
+//     mainResult = firstNumber % secondNumber;
+//     result.value = mainResult;
+//   }
+// }
